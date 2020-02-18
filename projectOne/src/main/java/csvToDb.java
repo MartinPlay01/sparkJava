@@ -1,6 +1,8 @@
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
+import static org.apache.spark.sql.functions.concat;
+import static org.apache.spark.sql.functions.lit;
 
 public class csvToDb {
 
@@ -17,7 +19,7 @@ public class csvToDb {
                 .load("src/main/resources/name_and_comments.txt");
 
 
-        Dataset<Row> df2 = df.withColumn("Apellido", df.col("last_name"));
+        Dataset<Row> df2 = df.withColumn("fullname", concat(df.col("first_name"), lit(", ") , df.col("last_name")));
 
         df2.show(5);
     }
