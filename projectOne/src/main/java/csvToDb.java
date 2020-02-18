@@ -21,6 +21,8 @@ public class csvToDb {
 
         Dataset<Row> df2 = df.withColumn("fullname", concat(df.col("first_name"), lit(", ") , df.col("last_name")));
 
+        df2 = df2.filter(df.col("comment").rlike("\\d+")).orderBy(df.col("last_name").asc());
+
         df2.show(5);
     }
 
