@@ -16,7 +16,10 @@ public class csvToDb {
                 .option("header", true)
                 .load("src/main/resources/name_and_comments.txt");
 
-        df.show(5);
+
+        Dataset<Row> df2 = df.withColumn("Apellido", df.col("last_name"));
+
+        df2.show(5);
     }
 
 }
