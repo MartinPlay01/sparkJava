@@ -1,5 +1,5 @@
 
-###Como instalar el postgres
+### Como instalar el postgres
 
 1) Creamos la imagen
 
