@@ -27,19 +27,19 @@ public class csvToDb {
       .filter(df.col("comment").rlike("\\d+"))
       .orderBy(df.col("last_name").asc());
     
-    db.show(5)
+    df.show(5);
     
     
     String dbConnectionUrl = "jdbc:postgresql://localhost/course_data";
     Properties prop = new Properties();
     prop.setProperty("driver", "org.postgresql.Driver");
-    prop.setProperty("user", "postgres");
-    prop.setProperty("password", "postgres");
+    prop.setProperty("user", "lala");
+    prop.setProperty("password", "lala");
     
     
-    //    df.write()
-    //            .mode(SaveMode.Overwrite)
-    //            .jdbc(dbConnectionUrl, "projectOne", prop);
+        df.write()
+                .mode(SaveMode.Overwrite)
+                .jdbc(dbConnectionUrl, "projectOne", prop);
   }
   
 }
