@@ -1,0 +1,31 @@
+{
+    "status": {
+        "timestamp": "2020-02-24T23:10:52.123Z",
+        "error_code": 0,
+        "error_message": null,
+        "elapsed": 8,
+        "credit_count": 1,
+        "notice": null
+    },
+    "data": {
+        "active_cryptocurrencies": 3446,
+        "total_cryptocurrencies": 5140,
+        "active_market_pairs": 20730,
+        "active_exchanges": 700,
+        "total_exchanges": 930,
+        "eth_dominance": 10.3705,
+        "btc_dominance": 63.068,
+        "quote": {
+            "USD": {
+                "total_market_cap": 278285824654.648,
+                "total_volume_24h": 161127251247.693,
+                "total_volume_24h_reported": 171394539233.928,
+                "altcoin_volume_24h": 116184021644.71,
+                "altcoin_volume_24h_reported": 122336601453.081,
+                "altcoin_market_cap": 102776551112.84,
+                "last_updated": "2020-02-24T23:09:00.000Z"
+            }
+        },
+        "last_updated": "2020-02-24T23:09:00.000Z"
+    }
+}
