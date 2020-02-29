@@ -1,3 +1,4 @@
+package querycoinmk;
 /**
  * This example uses the Apache HTTPComponents library.
  */
@@ -25,23 +26,25 @@ import java.util.List;
 public class JavaExample {
   
   
-  private static String apiKey = "lalaala";
+  private static String apiKey = "lala";
   
   public static void main(String[] args) {
-    String uri = "https://pro-api.coinmarketcap.com/v1/global-metrics/quotes/latest";
+    String uri = "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest";
     List<NameValuePair> paratmers = new ArrayList<NameValuePair>();
-    /*paratmers.add(new BasicNameValuePair("start","1"));*/
-    /*paratmers.add(new BasicNameValuePair("limit","5000"));*/
+    paratmers.add(new BasicNameValuePair("start","1"));
+    paratmers.add(new BasicNameValuePair("limit","5000"));
     paratmers.add(new BasicNameValuePair("convert","USD"));
     
-    String path = "src/main/resources/rawjson.json";
+    String path = "src/main/resources/dataset2.json";
     
     try (FileWriter writer = new FileWriter(path);
          BufferedWriter bw = new BufferedWriter(writer)) {
       String result = makeAPICall(uri, paratmers);
   
       bw.write(result);
-  
+      
+    /*print in console*/
+      
       System.out.println(result);
     } catch (IOException e) {
       System.out.println("Error: cannont access content - " + e.toString());
