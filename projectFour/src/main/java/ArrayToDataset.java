@@ -1,8 +1,11 @@
+import org.apache.spark.api.java.function.MapFunction;
+import org.apache.spark.api.java.function.ReduceFunction;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Encoders;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
 
+import java.io.Serializable;
 import java.util.Arrays;
 import java.util.List;
 
@@ -19,18 +22,35 @@ public class ArrayToDataset {
     List<String> data = Arrays.asList(stringsList);
     
     Dataset<String> ds = spark.createDataset(data, Encoders.STRING());
+
+//    ds = ds.map(new StringMapper(), Encoders.STRING());
     
-    /*change dataset to dataframe*/
-    Dataset<Row> df = ds.toDF();
-  
-    /*change dataframe to dataset*/
-    ds = df.as(Encoders.STRING());
+    /*Using lambda functions and not work with class StringMapper minus code*/
+    ds = ds.map((MapFunction<String, String>) row -> "word: " + row, Encoders.STRING());
     
-    ds.printSchema();
-    ds.show();
+    String stringValue = ds.reduce(new StringReducer());//Not encoder because return a single String
     
-    Dataset<Row> df2 = ds.groupBy("value").count();
-    df2.show();
+    System.out.println("String value: "+ stringValue);
+    
   }
+  
+  
+/*  static class StringMapper implements MapFunction<String, String>, Serializable {
+  
+  
+    @Override
+    public String call(String value) throws Exception {
+      return "word: "+ value;
+    }
+  }*/
+  
+  static class StringReducer implements ReduceFunction<String>, Serializable {
+    
+    @Override
+    public String call(String s, String t1) throws Exception {
+      return s + t1;
+    }
+  }
+  
   
 }
