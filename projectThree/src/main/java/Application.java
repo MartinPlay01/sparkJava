@@ -3,6 +3,7 @@ import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 import org.apache.spark.sql.SparkSession;
 import static org.apache.spark.sql.functions.*;
+
 public class Application {
   
   public static void main(String[] args) {
@@ -17,24 +18,29 @@ public class Application {
     
     /*second execution of method*/
     Dataset<Row> philDf = buildPhilParkDataframe(spark);
-    philDf.show(5);
     
-    combineDataframes(philDf, martinDf);
-  
+    Dataset<Row> rs = combineDataframes(philDf, martinDf);
+    
+    String path = "src/main/resources/output/fileout.csv";
+    rs.coalesce(1)
+      .write()
+      .option("header", true)
+      .csv(path);
+    
+//    martinDf.write().format("csv").("src/main/resources/output/csvOutput.csv");
   }
   
   /*when we use methods as a union, we need a minimum of 2 partitions*/
-  private static void combineDataframes(Dataset<Row> philDf, Dataset<Row> martinDf) {
+  public static Dataset<Row> combineDataframes(Dataset<Row> philDf, Dataset<Row> martinDf) {
     /*Match by column name using the unionByName method
       if we use the union() method, it matches the columns based on order.*/
     Dataset<Row> df = philDf.unionByName(martinDf);
-    df.show(200);
-    df.printSchema();
     System.out.println("we have " + df.count() + " records.");
     
     Partition[] partitions = df.rdd().partitions();
     System.out.println("total number of partitions "+ partitions.length);
   
+    return df;
   }
   
   
