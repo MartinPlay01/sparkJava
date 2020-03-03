@@ -38,12 +38,24 @@ public class CustomerAndProducts {
       .drop("favorite_website").drop(purchaseDf.col("customer_id"))
       .drop(purchaseDf.col("product_id")).drop("product_id");
     
-    joinnedDate.groupBy("first_name", "product_name").agg(
+    Dataset<Row> aggDf = joinnedDate.groupBy("first_name", "product_name").agg(
       count("product_name").as("number_of_purchases"),
       max("product_price").as("most_exp_purchases"),
       sum("product_price").as("total_spent")
-    ).show();
+    );
     
+    aggDf = aggDf.drop("number_of_purchases").drop("most_exp_purchases");
+    
+    Dataset<Row> initialDf = aggDf;
+    
+    for (int i = 0; i < 500; i++){
+      aggDf = aggDf.union(initialDf);
+    }
+    
+    joinnedDate.show();
+    
+/*    joinnedDate.collectAsList();//send all dataset elements to a list
+    joinnedDate.collect();//send all dataset elements to a Array*/
   }
   
 }

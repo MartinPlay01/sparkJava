@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e73cf7a2-c422-4806-9bec-62d92e3e565e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+    <list default="true" id="904ce82d-a2e1-47a9-9863-2f7f140cc23f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projectSix.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectFour/src/main/java/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/projectFour/src/main/java/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectThree/src/main/java/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/projectThree/src/main/java/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projectFive/src/main/java/CustomerAndProducts.java" beforeDir="false" afterPath="$PROJECT_DIR$/projectFive/src/main/java/CustomerAndProducts.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +25,7 @@
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
   </component>
-  <component name="ProjectId" id="1YUPrZIRWfQ5h1m0IVBdX57mqJT" />
+  <component name="ProjectId" id="1YdIRkgnSDSfDs4dby5a0eAXEwT" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -33,6 +33,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
   </component>
@@ -53,12 +54,12 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="e73cf7a2-c422-4806-9bec-62d92e3e565e" name="Default Changelist" comment="" />
-      <created>1582994398661</created>
+      <changelist id="904ce82d-a2e1-47a9-9863-2f7f140cc23f" name="Default Changelist" comment="" />
+      <created>1583266038052</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1582994398661</updated>
-      <workItem from="1582994401744" duration="28000" />
+      <updated>1583266038052</updated>
+      <workItem from="1583266044443" duration="30000" />
     </task>
     <servers />
   </component>
