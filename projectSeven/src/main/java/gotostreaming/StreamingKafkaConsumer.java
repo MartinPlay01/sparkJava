@@ -1,5 +1,6 @@
 package gotostreaming;
 
+
 import org.apache.spark.api.java.function.FlatMapFunction;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Encoders;
@@ -17,8 +18,8 @@ public class StreamingKafkaConsumer {
       .appName("Streaming kafka consumer")
       .master("local")
       .getOrCreate();
-    
-    
+
+
 //    Kafka consumer
     Dataset<Row> messageDf = spark.readStream()
       .format("kafka")
@@ -26,7 +27,7 @@ public class StreamingKafkaConsumer {
       .option("subscribe", "test")
       .load()
       .selectExpr("CAST(value AS STRING)");// lines.selectExpr("CAST key AS STRING", "CAST value AS STRING") for key value
-    
+
 //    messageDf.show() -> can't do this when streaming!
     Dataset<String> words = messageDf
       .as(Encoders.STRING())
